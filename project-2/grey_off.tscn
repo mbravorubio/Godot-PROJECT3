@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://3uf83kkcv1fb"]
+
+[ext_resource type="Texture2D" uid="uid://bmodysni7iumj" path="res://Free/Traps/Platforms/Grey Off.png" id="1_eyank"]
+
+[node name="GreyOff" type="Sprite2D"]
+position = Vector2(179, 295)
+texture = ExtResource("1_eyank")
