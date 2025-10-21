@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=28 format=3 uid="uid://m82ljy6r3547"]
 
 [ext_resource type="Script" uid="uid://bcsrornajdbts" path="res://player.gd" id="1_kne1u"]
@@ -177,6 +178,9 @@ animations = [{
 "name": &"run",
 "speed": 20.0
 }]
+=======
+[gd_scene load_steps=0 format=3 uid="uid://m82ljy6r3547"]
+>>>>>>> bab2e6cfc6cc4549aa75a30f02f25d0f0c990668
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_kne1u")
