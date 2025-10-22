@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://e87uhsfdcnru"]
+[gd_scene load_steps=15 format=3 uid="uid://crcw0hygyxt1i"]
 
 [ext_resource type="Texture2D" uid="uid://d1cuhwisal0nk" path="res://Free/Main Characters/Pink Man/Run (32x32).png" id="1_wtcfe"]
 
@@ -97,5 +97,6 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(120, 111)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 animation = &"walk"
