@@ -6,16 +6,20 @@
 distance = -102.0
 
 [node name="Game" type="Node2D"]
-position = Vector2(193, 486)
 
 [node name="Player" parent="." instance=ExtResource("1_rmx5a")]
-position = Vector2(198, -348)
+position = Vector2(579, 249)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(3, 195)
+limit_left = -9999638
+limit_top = -9999476
+limit_right = 10000362
+limit_bottom = 644
+limit_smoothed = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(45, -91)
+position = Vector2(429, 517)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-8, -66)
