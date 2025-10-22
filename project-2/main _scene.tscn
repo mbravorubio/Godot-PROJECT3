@@ -31,10 +31,23 @@ shape = SubResource("WorldBoundaryShape2D_rmx5a")
 [node name="box" type="StaticBody2D" parent="."]
 position = Vector2(529, 536)
 scale = Vector2(2.8333335, 2.8333333)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box"]
 shape = SubResource("RectangleShape2D_crk47")
 
 [node name="Sprite2D" type="Sprite2D" parent="box"]
+position = Vector2(0.3529412, 8.82353)
+texture = ExtResource("2_crk47")
+
+[node name="box2" type="StaticBody2D" parent="."]
+position = Vector2(589, 486)
+scale = Vector2(2.8333335, 2.8333333)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box2"]
+shape = SubResource("RectangleShape2D_crk47")
+
+[node name="Sprite2D" type="Sprite2D" parent="box2"]
 position = Vector2(0.3529412, 8.82353)
 texture = ExtResource("2_crk47")
