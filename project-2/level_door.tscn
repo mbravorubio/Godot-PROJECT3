@@ -14,8 +14,8 @@ font_names = PackedStringArray("Century Gothic")
 position = Vector2(24, 13.5)
 shape = SubResource("RectangleShape2D_s1kbv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(13, 11)
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-11, -2.5)
 texture = ExtResource("1_fbrah")
 
 [node name="UI" type="CanvasLayer" parent="."]
