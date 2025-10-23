@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://wfyf14at1acl"]
+[gd_scene load_steps=8 format=3 uid="uid://wfyf14at1acl"]
 
 [ext_resource type="Texture2D" uid="uid://dsqnym3081moq" path="res://Sprites/11-Door/Idle.png" id="1_fbrah"]
+[ext_resource type="Script" uid="uid://dovtl8pf6aqt5" path="res://level_door.gd" id="1_s1kbv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1kbv"]
 size = Vector2(64, 67)
@@ -8,7 +9,46 @@ size = Vector2(64, 67)
 [sub_resource type="SystemFont" id="SystemFont_e2kuh"]
 font_names = PackedStringArray("Century Gothic")
 
+[sub_resource type="Animation" id="Animation_e2kuh"]
+resource_name = "ui_visibility"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.099999994, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_avk0x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dfmnl"]
+_data = {
+&"RESET": SubResource("Animation_avk0x"),
+&"ui_visibility": SubResource("Animation_e2kuh")
+}
+
 [node name="level door" type="Area2D"]
+process_mode = 3
+script = ExtResource("1_s1kbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(24, 13.5)
@@ -229,3 +269,12 @@ text = "0"
 
 [node name="TileMap" type="TileMap" parent="UI/menu"]
 format = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dfmnl")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="pressed" from="UI/menu/container/restart button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/menu/container/continue button" to="." method="_on_continue_button_pressed"]
