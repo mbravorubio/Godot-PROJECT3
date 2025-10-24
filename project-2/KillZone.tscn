@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dlbwemetpljry"]
+[gd_scene load_steps=0 format=3 uid="uid://dlbwemetpljry"]
 
 [node name="KillZone" type="Area2D"]
 collision_mask = 2
