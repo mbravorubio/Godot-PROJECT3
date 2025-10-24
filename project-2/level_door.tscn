@@ -48,7 +48,6 @@ _data = {
 
 [node name="level door" type="Area2D"]
 process_mode = 3
-visible = false
 script = ExtResource("1_s1kbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

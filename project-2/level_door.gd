@@ -6,9 +6,9 @@ func _ready() -> void:
 	
 
 func _on_body_entered(body: CollisionShape2D) -> void:
-	if body.name=="player":
-		get_tree().paused=true
-		$UI/Menu.visible=true
+	if body.name=="Player":
+		get_tree().paused= true
+		$UI/Menu.visible= true
 		$AnimationPlayer.play("ui_visibility")
 	pass # Replace with function body.
 
