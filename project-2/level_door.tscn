@@ -1,14 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://wfyf14at1acl"]
+[gd_scene load_steps=8 format=3 uid="uid://wfyf14at1acl"]
 
 [ext_resource type="Texture2D" uid="uid://dsqnym3081moq" path="res://Sprites/11-Door/Idle.png" id="1_fbrah"]
 [ext_resource type="Script" uid="uid://dovtl8pf6aqt5" path="res://level_door.gd" id="1_s1kbv"]
-[ext_resource type="PackedScene" uid="uid://d2hgsg4nltw3i" path="res://main _scene.tscn" id="3_e2kuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1kbv"]
 size = Vector2(64, 67)
 
 [sub_resource type="SystemFont" id="SystemFont_e2kuh"]
 font_names = PackedStringArray("Century Gothic")
+
+[sub_resource type="Animation" id="Animation_avk0x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_e2kuh"]
 resource_name = "ui_visibility"
@@ -24,21 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_avk0x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UI/menu:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dfmnl"]
@@ -273,8 +272,6 @@ text = "0"
 libraries = {
 &"": SubResource("AnimationLibrary_dfmnl")
 }
-
-[node name="Game" parent="." instance=ExtResource("3_e2kuh")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="UI/menu/container/restart button" to="." method="_on_restart_button_pressed"]

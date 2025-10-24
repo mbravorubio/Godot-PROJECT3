@@ -5,7 +5,7 @@ func _ready() -> void:
 
 	
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: CollisionShape2D) -> void:
 	if body.name=="player":
 		get_tree().paused=true
 		$UI/Menu.visible=true
