@@ -102,3 +102,4 @@ position = Vector2(0.3529412, 8.82353)
 texture = ExtResource("2_crk47")
 
 [node name="level door" parent="." instance=ExtResource("3_140gd")]
+visible = true
