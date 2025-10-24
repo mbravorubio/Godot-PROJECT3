@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-[gd_scene load_steps=8 format=3 uid="uid://wfyf14at1acl"]
+[gd_scene load_steps=8 format=3 uid="uid://dafkpolgwt5r"]
 
 [ext_resource type="Texture2D" uid="uid://dsqnym3081moq" path="res://Sprites/11-Door/Idle.png" id="1_fbrah"]
 [ext_resource type="Script" uid="uid://dovtl8pf6aqt5" path="res://level_door.gd" id="1_s1kbv"]
-=======
-[gd_scene load_steps=9 format=3 uid="uid://be31xkbft358g"]
-
-[ext_resource type="Texture2D" uid="uid://dsqnym3081moq" path="res://Sprites/11-Door/Idle.png" id="1_fbrah"]
-[ext_resource type="Script" path="res://level_door.gd" id="1_s1kbv"]
-[ext_resource type="PackedScene" uid="uid://d2hgsg4nltw3i" path="res://main _scene.tscn" id="3_e2kuh"]
->>>>>>> 177bf196ab173c262146d39900924de4e33fd488
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1kbv"]
 size = Vector2(64, 67)

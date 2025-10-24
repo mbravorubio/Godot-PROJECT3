@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://m82ljy6r3547" path="res://Player.tscn" id="1_rmx5a"]
 [ext_resource type="Texture2D" uid="uid://oaoymo1mkyrn" path="res://Free/Items/Boxes/Box1/Idle.png" id="2_crk47"]
-[ext_resource type="PackedScene" uid="uid://wfyf14at1acl" path="res://level_door.tscn" id="3_140gd"]
+[ext_resource type="PackedScene" uid="uid://dafkpolgwt5r" path="res://level_door.tscn" id="3_140gd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmx5a"]
 distance = -102.0
