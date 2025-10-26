@@ -202,8 +202,8 @@ position = Vector2(-170, 243)
 shape = SubResource("CircleShape2D_kne1u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-162, 240)
-scale = Vector2(2.546873, 3)
+position = Vector2(-171.87498, 217.5)
+scale = Vector2(1.9296868, 1.71875)
 sprite_frames = SubResource("SpriteFrames_3vjad")
 animation = &"jump"
 autoplay = "idle"
