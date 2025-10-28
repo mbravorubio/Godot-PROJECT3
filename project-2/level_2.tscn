@@ -312,7 +312,7 @@ position = Vector2(53, 170)
 limit_left = -1000000
 limit_top = -1000000
 limit_right = 1000000
-limit_bottom = 200
+limit_bottom = 10000
 limit_smoothed = true
 
 [node name="Pickups" parent="." instance=ExtResource("5_n7ypv")]
