@@ -309,11 +309,11 @@ position = Vector2(-566, 425)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(53, 170)
-limit_left = -1000000
-limit_top = -1000000
-limit_right = 1000000
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
 limit_bottom = 1000
 limit_smoothed = true
 
 [node name="Pickups" parent="." instance=ExtResource("5_n7ypv")]
-position = Vector2(530, 222)
+position = Vector2(532, 230)
