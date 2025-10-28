@@ -198,11 +198,12 @@ animations = [{
 script = ExtResource("1_kne1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-170, 243)
+z_index = 5
+position = Vector2(52, 166)
 shape = SubResource("CircleShape2D_kne1u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-171.87498, 217.5)
+position = Vector2(50, 160.00002)
 scale = Vector2(1.9296868, 1.71875)
 sprite_frames = SubResource("SpriteFrames_3vjad")
 animation = &"jump"
