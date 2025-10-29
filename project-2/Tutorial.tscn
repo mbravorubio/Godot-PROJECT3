@@ -1,4 +1,30 @@
-[gd_scene format=3 uid="uid://dtv2v4pr7uxi6"]
+[gd_scene load_steps=7 format=3 uid="uid://cil8jcq3xpo5x"]
+
+[ext_resource type="FontFile" uid="uid://bopn8htegf16p" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_5s8la"]
+[ext_resource type="Script" uid="uid://y6jb0tg5orrr" path="res://tutorial.gd" id="1_p3v23"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jl26d"]
+bg_color = Color(0.59650874, 0.60342425, 0.5852706, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5s8la"]
+bg_color = Color(0.20983884, 0.64523816, 0.8620797, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr6qw"]
+bg_color = Color(0.44204715, 0.63268447, 0.71308833, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oiqhk"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -7,3 +33,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p3v23")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="How To Play" type="Label" parent="."]
+layout_mode = 1
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 485.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("1_5s8la")
+theme_override_font_sizes/font_size = 53
+text = "How to Play"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 113.0
+offset_right = 1116.0
+offset_bottom = 389.0
+text = "Collect diamaonds to restore collor back into your favorite places
+Watch out for the color police, they'll slow you down 
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 576.0
+offset_right = 1136.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("1_5s8la")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jl26d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5s8la")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fr6qw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oiqhk")
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
