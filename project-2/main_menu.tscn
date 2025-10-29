@@ -1,0 +1,119 @@
+[gd_scene load_steps=17 format=3 uid="uid://bkg8r2u2dhkw1"]
+
+[ext_resource type="FontFile" uid="uid://bopn8htegf16p" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_06t4h"]
+[ext_resource type="Shader" uid="uid://2tj6gdeifb7d" path="res://main_menu.gdshader" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://ccn3pc0g82klq" path="res://main_menu.gd" id="1_qe12f"]
+[ext_resource type="Texture2D" uid="uid://djm751cp1v3c2" path="res://Panel_picture.png" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://btm27srlcwkjo" path="res://rainbow.png" id="4_glbon"]
+[ext_resource type="FontFile" uid="uid://cadxf1sg20y0p" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://tyeingvpnbfb" path="res://Rainbow-2.png" id="5_nlkkf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_glbon"]
+shader = ExtResource("1_fu7sn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("2_jix8l")
+modulate_color = Color(0.30643955, 0.30643955, 0.30643955, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.06, 0.06, 0.06, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o4t1"]
+texture = ExtResource("4_glbon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
+texture = ExtResource("4_glbon")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlkkf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qtwp"]
+texture = ExtResource("5_nlkkf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy7ct"]
+texture = ExtResource("5_nlkkf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qe12f")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_glbon")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -50.0
+offset_right = 186.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0o4t1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qe12f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nlkkf")
+text = "Start Game"
+
+[node name="Tutorial" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = 69.0
+offset_right = 186.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8qtwp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dy7ct")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qe12f")
+text = "Tutorial"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.0
+offset_top = 135.0
+offset_right = 242.0
+offset_bottom = 253.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 52
+text = "Color-Land"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]

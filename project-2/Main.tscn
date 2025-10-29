@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpf26f4rqnmn2"]
+
+[ext_resource type="Texture2D" uid="uid://2bj728dpywss" path="res://Free/Traps/Saw/Off.png" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://di4ad40rdlqt1" path="res://main.gd" id="1_uu6xs"]
+
+[sub_resource type="Animation" id="Animation_uu6xs"]
+resource_name = "intro"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r0du0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cm0pq"]
+_data = {
+&"RESET": SubResource("Animation_r0du0"),
+&"intro": SubResource("Animation_uu6xs")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uu6xs")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1161.0
+offset_bottom = 647.0
+color = Color(0.03, 0.03, 0.03, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(565, 421)
+scale = Vector2(3.368421, 2.9210527)
+texture = ExtResource("1_glv2v")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -11.5
+offset_right = 93.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Brought to you by Nailah, Mauricio and Luisa"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1161.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Overlay")
+libraries = {
+&"": SubResource("AnimationLibrary_cm0pq")
+}
+autoplay = "intro"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
