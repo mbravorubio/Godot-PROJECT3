@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=3 uid="uid://bj05ntdj2chum"]
+
+[ext_resource type="Script" uid="uid://d4ih0wwvo2fdy" path="res://level_3.gd" id="1_wq1ne"]
+[ext_resource type="PackedScene" uid="uid://dq57iati4mocv" path="res://Platform.tscn" id="2_qc0b4"]
+[ext_resource type="PackedScene" uid="uid://m82ljy6r3547" path="res://Player.tscn" id="3_cyhhe"]
+[ext_resource type="PackedScene" uid="uid://d3gkftdc0e5ce" path="res://Pickups.tscn" id="4_uu3pl"]
+[ext_resource type="PackedScene" uid="uid://dem51moywmaaj" path="res://door_level_2.tscn" id="5_061e5"]
+[ext_resource type="PackedScene" uid="uid://dlbwemetpljry" path="res://KillZone.tscn" id="6_4bn6y"]
+[ext_resource type="PackedScene" uid="uid://oithltk2st0d" path="res://Enemy.tscn" id="7_87f22"]
+
+[sub_resource type="Animation" id="Animation_n7ypv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(591, 368)]
+}
+
+[sub_resource type="Animation" id="Animation_1y8me"]
+resource_name = "move"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(591, 368), Vector2(988, 368)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0s5r2"]
+_data = {
+&"RESET": SubResource("Animation_n7ypv"),
+&"move": SubResource("Animation_1y8me")
+}
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7j8ne"]
+distance = -14.0
+
+[sub_resource type="Environment" id="Environment_7ds5r"]
+adjustment_enabled = true
+adjustment_saturation = 0.01
+
+[node name="Level 3" type="Node2D"]
+script = ExtResource("1_wq1ne")
+
+[node name="Platform" parent="." instance=ExtResource("2_qc0b4")]
+position = Vector2(591, 368)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_0s5r2")
+}
+autoplay = "move"
+
+[node name="Player" parent="." instance=ExtResource("3_cyhhe")]
+position = Vector2(-561, 416)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(53, 170)
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
+limit_bottom = 1000
+limit_smoothed = true
+
+[node name="Pickups" parent="." instance=ExtResource("4_uu3pl")]
+position = Vector2(661, 271)
+
+[node name="DoorLevel3" parent="." instance=ExtResource("5_061e5")]
+position = Vector2(2009, 620)
+
+[node name="KillZone" parent="." instance=ExtResource("6_4bn6y")]
+position = Vector2(-59, 978)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(13, 25)
+shape = SubResource("WorldBoundaryShape2D_7j8ne")
+
+[node name="Enemy" parent="." instance=ExtResource("7_87f22")]
+position = Vector2(822, 495)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(1, 0.47843137, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7ds5r")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
