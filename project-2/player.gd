@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -400.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jumping = false
+var has_pickup = false  # ✅ tracks whether the player collected the pickup
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 

@@ -125,14 +125,31 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -252.0
-offset_top = 135.0
-offset_right = 242.0
-offset_bottom = 253.0
+offset_left = -251.0
+offset_top = 92.0
+offset_right = 243.0
+offset_bottom = 210.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 68
 text = "Color-Land"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 84.0
+offset_right = 371.0
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 21
+text = "It's your job to restore the color back 
+before all hope is gone!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
