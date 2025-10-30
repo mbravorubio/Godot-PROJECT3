@@ -18,3 +18,9 @@ func _on_start_pressed() -> void:
 
 func _on_tutorial_pressed() -> void:
 	get_tree().change_scene_to_file("res://Tutorial.tscn")
+	
+
+
+
+func _on_story_pressed() -> void:
+	get_tree().change_scene_to_file("res://Main.tscn")
