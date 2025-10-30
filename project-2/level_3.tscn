@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dkqtbqsw5j1e7"]
+[gd_scene load_steps=18 format=3 uid="uid://dkqtbqsw5j1e7"]
 
 [ext_resource type="Texture2D" uid="uid://cafj7dplea50u" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_7ds5r"]
 [ext_resource type="Texture2D" uid="uid://clm083nr7snt5" path="res://brackeys_platformer_assets/sprites/platforms.png" id="2_liaj6"]
@@ -290,6 +290,9 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7j8ne"]
 distance = -14.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ds5r"]
+size = Vector2(408.14063, 256.3125)
+
 [sub_resource type="Environment" id="Environment_7ds5r"]
 adjustment_enabled = true
 adjustment_saturation = 0.01
@@ -337,6 +340,27 @@ position = Vector2(-59, 978)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(13, 25)
 shape = SubResource("WorldBoundaryShape2D_7j8ne")
+
+[node name="KillZone2" parent="." instance=ExtResource("7_jvy75")]
+position = Vector2(-59, 978)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone2"]
+position = Vector2(82, -191)
+shape = SubResource("RectangleShape2D_7ds5r")
+
+[node name="KillZone3" parent="." instance=ExtResource("7_jvy75")]
+position = Vector2(-59, 978)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone3"]
+position = Vector2(515.9297, -302)
+shape = SubResource("RectangleShape2D_7ds5r")
+
+[node name="KillZone4" parent="." instance=ExtResource("7_jvy75")]
+position = Vector2(-59, 978)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone4"]
+position = Vector2(1162.7188, -448.15625)
+shape = SubResource("RectangleShape2D_7ds5r")
 
 [node name="Enemy" parent="." instance=ExtResource("8_g0tlw")]
 position = Vector2(822, 495)
