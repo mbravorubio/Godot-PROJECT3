@@ -318,20 +318,28 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 113.0
-offset_right = 1116.0
-offset_bottom = 389.0
-text = "Collect diamaonds to restore collor back into your favorite places
-Watch out for the color police, they'll slow you down 
+offset_left = 28.0
+offset_top = 106.0
+offset_right = 906.0
+offset_bottom = 382.0
+theme_override_fonts/font = ExtResource("1_5s8la")
+text = "Use the left and right arrow keys to move
+
+Use the space bar to jump
+
+Collect the diamaonds to restore collor back into your favorite places
+
+Watch out for the color police, they'll slow you down!
+
+Press start to begin your journey 
 "
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 928.0
-offset_top = 576.0
-offset_right = 1136.0
-offset_bottom = 630.0
+offset_left = 895.0
+offset_top = 560.0
+offset_right = 1103.0
+offset_bottom = 614.0
 theme_override_fonts/font = ExtResource("1_5s8la")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_jl26d")
