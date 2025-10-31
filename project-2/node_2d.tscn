@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://crcw0hygyxt1i"]
+[gd_scene load_steps=8 format=3 uid="uid://crcw0hygyxt1i"]
 
 [ext_resource type="Texture2D" uid="uid://cafj7dplea50u" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://cnfai6pmr1yhb" path="res://level_1.gd" id="1_q6r6c"]
@@ -145,8 +145,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mscgj")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6r6c"]
-
 [node name="level1" type="Node2D"]
 position = Vector2(1, -1)
 script = ExtResource("1_q6r6c")
@@ -164,10 +162,3 @@ position = Vector2(405, 199)
 
 [node name="DoorLevel1" parent="." instance=ExtResource("4_0hol4")]
 position = Vector2(362, 228)
-
-[node name="GrayscaleOverlay" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_q6r6c")
-offset_left = -4.0
-offset_top = 4.0
-offset_right = 1151.0
-offset_bottom = 663.0
