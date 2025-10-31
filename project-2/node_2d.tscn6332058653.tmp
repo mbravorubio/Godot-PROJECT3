@@ -167,7 +167,9 @@ position = Vector2(362, 228)
 
 [node name="GrayscaleOverlay" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_q6r6c")
-offset_left = -4.0
-offset_top = 4.0
-offset_right = 1151.0
-offset_bottom = 663.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.003921569)
