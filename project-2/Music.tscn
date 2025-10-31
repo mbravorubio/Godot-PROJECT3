@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://7qewojphc7pp"]
+
+[ext_resource type="AudioStream" uid="uid://ctgrnx1g2mefu" path="res://slow-travel.wav" id="1_fw6bl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_fw6bl")
+volume_db = 1.0
+autoplay = true

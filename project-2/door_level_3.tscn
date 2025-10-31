@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cko412xv8ew37"]
+
+[ext_resource type="Texture2D" uid="uid://dsqnym3081moq" path="res://Sprites/11-Door/Idle.png" id="1_7jqnj"]
+[ext_resource type="Script" uid="uid://c4wcfb4lxisq4" path="res://door_level_3.gd" id="1_a77q3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a77q3"]
+radius = 22.0
+height = 58.0
+
+[node name="DoorLevel3" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_a77q3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.5, -5.5)
+scale = Vector2(1.1956521, 1.1964285)
+texture = ExtResource("1_7jqnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -3)
+shape = SubResource("CapsuleShape2D_a77q3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

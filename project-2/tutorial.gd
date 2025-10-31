@@ -1,7 +1,7 @@
 extends Control
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("level_1.tscn")
+	get_tree().change_scene_to_file("res://level_door.tscn")
 
 
 @onready var player = $Player
@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 			pass
 
 func _on_pickup_collected():
-	panel.modulate = Color(0.2, 1.0, 0.2)  # turn panel green
+	panel.modulate = Color(1.0, 0.2, 0.573, 1.0)  # turn panel green
 	hint_label.text = "Awesome! Tutorial complete!"
 	stage = 3
 	tutorial_complete = true  
