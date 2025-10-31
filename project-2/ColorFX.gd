@@ -1,37 +1,38 @@
 extends Node
 
 var overlay: ColorRect
-var env: Environment
 
 func _ready() -> void:
-	_refresh_env()
+	_refresh_overlay()
+	# Start in black & white on load
+	if overlay and overlay.material is ShaderMaterial:
+		(overlay.material as ShaderMaterial).set_shader_parameter("saturation", 0.0)
 
-func _refresh_env() -> void:
-	# Look for the WorldEnvironment and GrayscaleOverlay in the current scene
-	var we := get_tree().current_scene.get_node_or_null("WorldEnvironment")
-	var ol := get_tree().current_scene.get_node_or_null("GrayscaleOverlay")
-	if we and we is WorldEnvironment:
-		env = we.environment
-		if env:
-			env.adjustment_enabled = true
-	if ol and ol is ColorRect:
-		overlay = ol
+func _refresh_overlay() -> void:
+	var scene := get_tree().current_scene
+	if scene == null:
+		overlay = null
+		return
+   
+	overlay = scene.get_node_or_null("FXLayer/GrayscaleOverlay")
+	if overlay == null:
+		overlay = scene.get_node_or_null("GrayscaleOverlay")
+  
+	if overlay == null:
+		overlay = scene.find_child("GrayscaleOverlay", true, false) as ColorRect
 
 func set_bw(enabled: bool, duration: float = 0.35) -> void:
-   
-	if not overlay or not overlay.material:
-		_refresh_env()
-	if not overlay or not overlay.material:
+	_refresh_overlay()
+	if not (overlay and overlay.material is ShaderMaterial):
 		return
 
-	
-	var target: float = 0.0 if enabled else 1.0
-	var from: float = float(overlay.material.get_shader_parameter("saturation"))
+	var sh := overlay.material as ShaderMaterial
+	var from: float = float(sh.get_shader_parameter("saturation"))
+	var target: float = 0.0 if enabled else 1.0     
 
-
-	var tween := get_tree().create_tween()
-	tween.tween_method(
+	var tw := get_tree().create_tween()
+	tw.tween_method(
 		func(v: float) -> void:
-			overlay.material.set_shader_parameter("saturation", v),
+			sh.set_shader_parameter("saturation", v),
 		from, target, duration
 	)
