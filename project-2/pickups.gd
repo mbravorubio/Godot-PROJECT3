@@ -1,10 +1,10 @@
 extends Area2D
-signal collected  
+@export var color_restore_duration: float = 0.5
 
-func _on_body_entered(body: Node2D) -> void:
-	# Only the player can collect this
-	if body.name == "Player": 
-		emit_signal("collected")
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		body.has_pickup = true  
-		queue_free()            # make the pickup disappear
+		ColorFX.set_bw(false, color_restore_duration)
+		queue_free()

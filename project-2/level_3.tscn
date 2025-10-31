@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkqtbqsw5j1e7"]
+[gd_scene load_steps=21 format=3 uid="uid://dkqtbqsw5j1e7"]
 
 [ext_resource type="Texture2D" uid="uid://cafj7dplea50u" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_7ds5r"]
 [ext_resource type="Script" uid="uid://d4ih0wwvo2fdy" path="res://level_3.gd" id="1_liaj6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dlbwemetpljry" path="res://KillZone.tscn" id="7_jvy75"]
 [ext_resource type="PackedScene" uid="uid://oithltk2st0d" path="res://Enemy.tscn" id="8_g0tlw"]
 [ext_resource type="PackedScene" uid="uid://cko412xv8ew37" path="res://door_level_3.tscn" id="9_liaj6"]
+[ext_resource type="Shader" uid="uid://blfff4vpugumf" path="res://level_3.gdshader" id="10_b60u5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y8me"]
 texture = ExtResource("1_7ds5r")
@@ -298,6 +299,10 @@ size = Vector2(360.0703, 244.15625)
 adjustment_enabled = true
 adjustment_saturation = 0.01
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kmy7e"]
+shader = ExtResource("10_b60u5")
+shader_parameter/saturation = 0.0
+
 [node name="Level 3" type="Node2D"]
 script = ExtResource("1_liaj6")
 
@@ -372,3 +377,16 @@ color = Color(1, 0.47843137, 0, 1)
 
 [node name="DoorLevel3" parent="." instance=ExtResource("9_liaj6")]
 position = Vector2(2062, 612)
+
+[node name="FXLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="GrayscaleOverlay" type="ColorRect" parent="FXLayer"]
+z_index = 1000
+material = SubResource("ShaderMaterial_kmy7e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
