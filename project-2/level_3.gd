@@ -1,4 +1,5 @@
 extends Node2D
+@export var level_number = 3
 
 @onready var we: WorldEnvironment = $WorldEnvironment
 
