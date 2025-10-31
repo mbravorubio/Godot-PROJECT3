@@ -359,10 +359,10 @@ layer_0/tile_data = PackedInt32Array(1703936, 393216, 1, 1769472, 393216, 1, 183
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HintLabel" type="Label" parent="CanvasLayer"]
-offset_left = 202.0
-offset_top = 409.0
-offset_right = 581.0
-offset_bottom = 432.0
+offset_left = 183.0
+offset_top = 350.0
+offset_right = 562.0
+offset_bottom = 373.0
 theme_override_fonts/font = ExtResource("1_5s8la")
 theme_override_font_sizes/font_size = 20
 
