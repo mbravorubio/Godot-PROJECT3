@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bleourk43ix55"]
+[gd_scene load_steps=18 format=3 uid="uid://bleourk43ix55"]
 
 [ext_resource type="PackedScene" uid="uid://m82ljy6r3547" path="res://Player.tscn" id="1_xdadj"]
 [ext_resource type="Texture2D" uid="uid://cafj7dplea50u" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_nmjpi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dlbwemetpljry" path="res://KillZone.tscn" id="6_0s5r2"]
 [ext_resource type="PackedScene" uid="uid://dem51moywmaaj" path="res://door_level_2.tscn" id="6_7dov7"]
 [ext_resource type="PackedScene" uid="uid://oithltk2st0d" path="res://Enemy.tscn" id="7_7j8ne"]
+[ext_resource type="Shader" uid="uid://blfff4vpugumf" path="res://level_3.gdshader" id="9_ehv2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y8me"]
 texture = ExtResource("2_nmjpi")
@@ -290,6 +291,10 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7j8ne"]
 distance = -14.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15wb7"]
+shader = ExtResource("9_ehv2h")
+shader_parameter/saturation = 0.0
+
 [node name="Level 2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -336,3 +341,16 @@ shape = SubResource("WorldBoundaryShape2D_7j8ne")
 
 [node name="Enemy" parent="." instance=ExtResource("7_7j8ne")]
 position = Vector2(822, 495)
+
+[node name="FXLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="GrayscaleOverlay" type="ColorRect" parent="FXLayer"]
+z_index = 1000
+material = SubResource("ShaderMaterial_15wb7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
