@@ -157,8 +157,8 @@ layer_0/tile_data = PackedInt32Array(2162688, 0, 0, 2162689, 0, 0, 2162690, 0, 0
 [node name="Player" parent="." instance=ExtResource("2_q6r6c")]
 position = Vector2(-18, 344)
 
+[node name="Pickups" parent="." instance=ExtResource("5_q6r6c")]
+position = Vector2(405, 199)
+
 [node name="DoorLevel1" parent="." instance=ExtResource("4_0hol4")]
 position = Vector2(362, 228)
-
-[node name="Pickups" parent="DoorLevel1" instance=ExtResource("5_q6r6c")]
-position = Vector2(43, -29)
